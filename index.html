@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wellness Picks - Everyday Health Gadgets We Love</title>
+<meta name="description" content="Hand-picked health and wellness gadgets that actually make daily life easier.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --border: #e5e7eb;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --text: #111827;
+    --muted: #6b7280;
+    --accent-teal: #0d9488;
+    --accent-teal-dark: #0f766e;
+    --accent-amber: #f59e0b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+
+  /* ===== ヘッダー ===== */
+  header {
+    position: relative;
+    overflow: hidden;
+    padding: 72px 24px 88px;
+    text-align: center;
+    background: linear-gradient(135deg, #0f766e 0%, #0d9488 45%, #2563eb 100%);
+    color: #ffffff;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 15% 25%, rgba(255,255,255,0.14) 0, transparent 40%),
+      radial-gradient(circle at 85% 15%, rgba(255,255,255,0.10) 0, transparent 35%),
+      radial-gradient(circle at 75% 85%, rgba(255,255,255,0.08) 0, transparent 40%);
+    pointer-events: none;
+  }
+  header .wave {
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    width: 100%;
+    height: 64px;
+    display: block;
+  }
+  .header-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.28);
+    padding: 7px 16px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  .eyebrow svg { width: 14px; height: 14px; }
+  header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 44px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    text-wrap: balance;
+  }
+  header p {
+    color: rgba(255,255,255,0.88);
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .header-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .header-stats div {
+    text-align: left;
+  }
+  .header-stats .num {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    display: block;
+    font-variant-numeric: tabular-nums;
+  }
+  .header-stats .label {
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    color: rgba(255,255,255,0.75);
+    text-transform: uppercase;
+  }
+
+  /* ===== グリッド ===== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 0 24px 48px;
+    max-width: 1200px;
+    margin: -48px auto 0;
+    position: relative;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 10px rgba(15,23,42,0.06);
+    transition: box-shadow .2s, transform .2s, border-color .2s;
+  }
+  .card:hover {
+    box-shadow: 0 12px 28px rgba(13,148,136,0.16);
+    border-color: var(--accent-teal);
+    transform: translateY(-3px);
+  }
+  .image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .image-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .store-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border-radius: 999px;
+    color: #fff;
+    z-index: 1;
+  }
+  .store-amazon { background: #d97706; }
+  .store-aliexpress { background: #dc2626; }
+  .card-body { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+  .category {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-teal-dark);
+    background: #f0fdfa;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 10px;
+  }
+  .product-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .tagline { font-size: 13px; color: var(--accent-teal-dark); font-weight: 500; margin-bottom: 8px; }
+  .description { font-size: 13px; color: var(--muted); flex-grow: 1; margin-bottom: 14px; }
+  .cta { color: var(--accent-teal-dark); font-weight: 600; font-size: 13px; }
+  footer {
+    padding: 32px 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <span class="eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg>
+      Curated Picks
+    </span>
+    <h1>Wellness Picks</h1>
+    <p>Health and wellness gadgets worth your attention, hand-picked and updated 2026-10-13.</p>
+    <div class="header-stats">
+      <div><span class="num">1</span><span class="label">Products</span></div>
+      <div><span class="num">2</span><span class="label">Stores</span></div>
+      <div><span class="num">Weekly</span><span class="label">Updates</span></div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none">
+    <path d="M0,32 C240,64 480,0 720,16 C960,32 1200,64 1440,32 L1440,64 L0,64 Z" fill="#f8fafc"/>
+  </svg>
+</header>
+<div class="grid">
+        <a class="card" href="https://s.click.aliexpress.com/e/_c4sp5pyl" target="_blank" rel="noopener noreferrer sponsored">
+          <div class="image-wrap">
+            <span class="store-badge store-aliexpress">AliExpress</span>
+            <img src="images/neck_massager_aliexpress.jpg" alt="Smart Neck & Shoulder Massager" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="category">Massager</span>
+            <h2 class="product-name">Smart Neck & Shoulder Massager</h2>
+            <p class="tagline">Bionic finger-pressure kneading, warm care</p>
+            <p class="description">Electric kneading massager with bionic finger pressure, 40/45°C heat therapy, and 3 comfort levels. Only 0.76kg, easy to carry anywhere.</p>
+            <span class="cta">View on AliExpress →</span>
+          </div>
+        </a></div>
+<footer>
+  As an Amazon Associate we earn from qualifying purchases. This page contains affiliate links (Amazon and AliExpress) - we may earn a commission if you buy through these links, at no extra cost to you.
+</footer>
+</body>
+</html>
